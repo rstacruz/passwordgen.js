@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var words = require('../words');
+var cli = require('commander');
+
+var Words = {
+  word: function() {
+    var len = words.length;
+    return words[parseInt(Math.random() * len, 10)];
+  },
+  words: function(n) {
+    var list = [];
+    for (var i=0; i<n; ++i) { list.push(this.word()); }
+    return list;
+  }
+};
+
+cli
+  .option('-w, --words <n>', 'generate <n> words')
+  .option('-c, --chars <n>', 'generate <n> characters')
+  .option('-C, --copy', 'copy to clipboard')
+  .parse(process.argv);
+
+var str;
+
+if (!cli.words) cli.words = 4;
+
+if (cli.words) {
+  str = Words.words(cli.words).join(" ");
+}
+
+console.log(str);
