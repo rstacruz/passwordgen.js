@@ -69,16 +69,23 @@ cli
   .option('-w, --words <n>', 'generate <n> words')
   .option('-c, --chars <n>', 'generate <n> characters')
   .option('-s, --symbols', 'include symbols')
-  .option('-C, --copy', 'copy to clipboard')
+  .on('--help', function() {
+    console.log('');
+    console.log('  Examples:');
+    console.log('');
+    console.log('    $ gen         #=> EH8peEWVyYskuPh');
+    console.log('    $ gen -c 5    #=> WsPnA');
+    console.log('    $ gen -w 4    #=> correct horse battery staple');
+  })
   .parse(process.argv);
 
 var str;
 
-if (cli.chars) {
-  str = Chars.generate(cli.chars, cli);
+if (cli.words) {
+  str = Words.words(cli.words || 4, cli).join(" ");
 }
 else {
-  str = Words.words(cli.words || 4, cli).join(" ");
+  str = Chars.generate(cli.chars || 15, cli);
 }
 
 console.log(str);
