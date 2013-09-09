@@ -16,8 +16,9 @@ correct horse battery staple
 $ gen --chars 10 --symbols
 O_Rf-4qBOHmm
 
-$ gen | pbcopy
-# (Mac OSX copy-to-clipboard)
+$ gen | xsel -ib   # linux
+$ gen | pbcopy     # osx
+# copies the password to clipboard
 ~~~
 
 ## --help
