@@ -1,5 +1,10 @@
 # passwordgen.js
 
+Generates passwords in the command line. Why passwordgen.js?
+
+ * Makes phrase passwords as well as character passwords. See [xkcd #936].
+ * Word passwords are easier to type on mobile.
+
 ## Install
 
     npm install -g passwordgen
@@ -43,3 +48,4 @@ $ gen | pbcopy     # osx
 © 2013, Rico Sta. Cruz. Released under the [MIT License].
 
 [MIT License]: http://www.opensource.org/licenses/mit-license.php
+[xkcd #936]: https://xkcd.com/936/
