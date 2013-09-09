@@ -1,0 +1,17 @@
+{
+  "name": "passwordgen",
+  "description": "Password generator",
+  "keywords": [
+    "password", "generator"
+  ],
+  "author": "Rico Sta. Cruz <hi@ricostacruz.com>",
+  "version": "0.1.0",
+  "repo": "rstacruz/passwordgen.js",
+  "scripts": [
+    "lib/index.js",
+    "lib/words.js"
+  ],
+  "main": "lib/index.js",
+  "license": "MIT",
+  "dependencies": {}
+}
