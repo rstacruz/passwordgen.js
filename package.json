@@ -1,8 +1,8 @@
 {
-  "name": "livemarkup",
-  "description": "",
+  "name": "passwordgen",
+  "description": "Password generator for the command line",
   "keywords": [
-    ""
+    "password", "generator"
   ],
   "author": "Rico Sta. Cruz <hi@ricostacruz.com>",
   "version": "0.1.0",
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "https://github.com/rstacruz/passwordgen.js.git"
   },
-  "main": "index",
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec"
   },
@@ -19,7 +18,7 @@
     "chai": "*"
   },
   "bin": {
-    "command": "./bin/command"
+    "gen": "./bin/gen"
   },
   "license": "MIT",
   "dependencies": {
