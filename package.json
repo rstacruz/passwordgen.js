@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/rstacruz/passwordgen.js.git"
   },
+  "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec"
   },
