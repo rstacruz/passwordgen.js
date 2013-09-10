@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset='utf-8' />
+<title>Benchmarks</title>
+<script src='http://rstacruz.github.io/benchmarkjs-runner/runner.js'></script>
+<script src='../build/build.js'></script>
+<body>
+<script>
+var gen = new (require('passwordgen'));
+suite("characters", function() {
+  bench(".chars()", function() {
+    gen.chars(10);
+  });
+  bench(".chars({ numbers: false })", function() {
+    gen.chars(10, { numbers: false });
+  });
+  bench(".chars({ symbols: true })", function() {
+    gen.chars(10, { symbols: true });
+  });
+});
+
+suite("phrases", function() {
+  bench(".phrase()", function() {
+    gen.phrase(4);
+  });
+  bench(".phrase({ symbols: true })", function() {
+    gen.phrase(4, { symbols: true });
+  });
+});
+</script>
