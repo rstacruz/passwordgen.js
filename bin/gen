@@ -3,9 +3,8 @@
 
 var cli = require('commander');
 var Generator = require('..');
-var secureRandom = require('../lib/secure_random');
 
-var gen = new Generator({ random: secureRandom });
+var gen = new Generator().secure();
 
 cli
   .option('-w, --words <n>', 'generate <n> words')
