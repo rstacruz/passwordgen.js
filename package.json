@@ -12,11 +12,12 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec"
+    "test": "./node_modules/.bin/mocha -R spec --compilers coffee:coffee-script"
   },
   "devDependencies": {
     "mocha": "*",
-    "chai": "*"
+    "chai": "*",
+    "coffee-script": "*"
   },
   "bin": {
     "gen": "./bin/gen"
