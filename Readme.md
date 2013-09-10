@@ -43,6 +43,37 @@ $ gen | pbcopy     # osx
       $ gen -c 5    #=> WsPnA
       $ gen -w 4    #=> correct horse battery staple
 
+## Programmatic usage
+
+See [index.js](lib/index.js) for all details.
+
+~~~ js
+var Passwordgen = require('passwordgen');
+gen = new Passwordgen();
+
+gen.phrase();       //=> "television pen card small"
+gen.chars();        //=> "uAC4bGA0tXG"
+
+gen.word();         //=> "kitten"
+gen.words();        //=> ['hello', 'honey', 'mittens', 'score']
+~~~
+
+Also available:
+
+~~~ js
+gen.phrase(3);
+gen.phrase({ symbols: true });
+gen.phrase({ separator: '_' });
+
+gen.words(3);
+gen.words({ symbols: true });
+
+gen.chars(10);
+gen.chars(10, { letters: false });
+gen.chars(10, { numbers: false });
+gen.chars(10, { symbols: true });
+~~~
+
 ## License
 
 © 2013, Rico Sta. Cruz. Released under the [MIT License].
