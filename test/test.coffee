@@ -70,3 +70,14 @@ describe 'Passwordgen', ->
       phrase = gen.phrase(10)
       assert.equal phrase.split(' ').length, 10
 
+  describe 'secure_random', ->
+    random = null
+
+    before ->
+      random = require('../lib/secure_random')
+
+    it '<= 1', repeat ->
+      assert.operator random(), '<=', 1
+
+    it '>= 0', repeat ->
+      assert.operator random(), '>=', 0
