@@ -2,19 +2,10 @@
 // vim:ft=javascript
 
 var cli = require('commander');
-var crypto = require('crypto');
 var Generator = require('..');
-var gen = new Generator({ random: random });
+var secureRandom = require('../lib/secure_random');
 
-function random() {
-  var prec = 3;
-  var buf = crypto.randomBytes(prec);
-  var max = 1 << (8*prec);
-  var acc = 0;
-
-  for (var i=0; i<prec; ++i) { acc = (acc << 8) + buf[i]; }
-  return acc/max;
-}
+var gen = new Generator({ random: secureRandom });
 
 cli
   .option('-w, --words <n>', 'generate <n> words')
