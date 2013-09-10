@@ -26,10 +26,14 @@ describe 'Passwordgen', ->
       result = gen.chars(10, numbers: false)
       assert.match result, /^[A-Za-z]+$/
 
-    it '.chars(n, symbols: true)', repeat ->
+    it '.chars(n, symbols: true) - has symbols', repeat ->
       result = gen.chars(10, symbols: true)
       result = result.replace(/[A-Za-z0-9]/g, '')
       assert.operator result.length, '>', 0
+
+    it '.chars(n, symbols: true) - length', repeat ->
+      result = gen.chars(10, symbols: true)
+      assert.equal result.length, 10
 
     it '.chars(15)', repeat ->
       result = gen.chars(15)
