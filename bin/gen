@@ -3,9 +3,8 @@
 
 var cli = require('commander');
 var crypto = require('crypto');
-var passwordgen = require('../lib')(random);
-var Words = passwordgen.Words;
-var Chars = passwordgen.Chars;
+var Generator = require('..');
+var gen = new Generator({ random: random });
 
 function random() {
   var prec = 3;
@@ -34,10 +33,10 @@ cli
 var str;
 
 if (cli.words) {
-  str = Words.words(cli.words || 4, cli).join(" ");
+  str = gen.phrase(cli.words || 4, cli);
 }
 else {
-  str = Chars.generate(cli.chars || 15, cli);
+  str = gen.chars(cli.chars || 15, cli);
 }
 
 console.log(str);
