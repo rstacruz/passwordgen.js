@@ -81,3 +81,13 @@ describe 'Passwordgen', ->
 
     it '>= 0', repeat ->
       assert.operator random(), '>=', 0
+
+  describe 'seed', ->
+    g = null
+
+    it 'works', ->
+      make = ->
+        g = new Generator()
+        g.seed('aoeuaoeu')
+        g.words(4).join(' ')
+      assert.equal make(), make()
