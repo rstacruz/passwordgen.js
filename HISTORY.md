@@ -1,3 +1,7 @@
+## v0.3.0
+
+- Add `--seed`
+
 ## v0.2.1 - May 11, 2015
 
 * Removed some offensive words from the dictionary. ([#2], [@ticoombs])

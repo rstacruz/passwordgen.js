@@ -32,10 +32,11 @@ $ gen | pbcopy     # osx
 
     Options:
 
-      -h, --help       output usage information
-      -w, --words <n>  generate <n> words
-      -c, --chars <n>  generate <n> characters
-      -s, --symbols    include symbols
+      -h, --help          output usage information
+      -w, --words <n>     generate <n> words
+      -c, --chars <n>     generate <n> characters
+      -s, --symbols       include symbols
+      -S, --seed <seed>   use a seed value
 
     Examples:
 
