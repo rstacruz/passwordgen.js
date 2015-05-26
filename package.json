@@ -25,6 +25,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "commander": "~1.1.1"
+    "commander": "~1.1.1",
+    "seed-random": "^2.2.0"
   }
 }

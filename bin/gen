@@ -4,12 +4,13 @@
 var cli = require('commander');
 var Generator = require('..');
 
-var gen = new Generator().secure();
+var gen = new Generator();
 
 cli
   .option('-w, --words <n>', 'generate <n> words')
   .option('-c, --chars <n>', 'generate <n> characters')
   .option('-s, --symbols', 'include symbols')
+  .option('-S, --seed <seed>', 'use a seed value')
   .on('--help', function() {
     console.log('');
     console.log('  Examples:');
@@ -21,6 +22,12 @@ cli
   .parse(process.argv);
 
 var str;
+
+if (cli.seed) {
+  gen.seed(cli.seed);
+} else {
+  gen.secure();
+}
 
 if (cli.words) {
   str = gen.phrase(cli.words || 4, cli);
